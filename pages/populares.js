@@ -1,13 +1,14 @@
-import React  from 'react'
+import React from 'react'
 import Layout from '@/components/layout/Layout';
-
 import { Inter } from "next/font/google";
+import useProductos from '@/hooks/useProductos';
+
 const inter = Inter({ subsets: ["latin"] });
-import useProductos from '@/hooks/useProductos'
 import DetallesProducto from '@/components/layout/DetallesProducto';
 
-const Home = () => {
-  const {data} = useProductos('creado') 
+const Popular = () => {
+  const {data} = useProductos('votos')
+  
 
   return  (
     <div>
@@ -33,4 +34,4 @@ const Home = () => {
   )
 
 }
-export default Home;
+export default Popular;
